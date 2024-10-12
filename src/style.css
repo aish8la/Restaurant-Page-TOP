@@ -5,14 +5,16 @@
 
 body, html {
     height: 100vh;
+    background: #effbf3;
 }
 
 header {
     background: #149FA8;
     display: flex;
     justify-content: space-between;
-    padding: 15px 15px;
+    padding: 15px 15px 8px 15px;
     max-height: 150px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .header-logo {
     max-width: 200px;
@@ -22,6 +24,7 @@ nav {
     margin: 0 auto;
     align-self: flex-end;
 }
+
 
 .nav-btn {
     padding: 10px 30px;
@@ -37,7 +40,7 @@ nav {
 .nav-btn::after {
     content: '';
     position: absolute;
-    background-color: #CAE6D3;
+    background-color: #06303E;
     height: 5px;
     width: 0;
     left: 0;
@@ -47,4 +50,10 @@ nav {
 
 .nav-btn:hover::after {
     width: 100%;
+}
+
+.nav-btn:hover {
+    color: #06303E;
+    transition: color 0.3s ease;
+    cursor: pointer;
 }
