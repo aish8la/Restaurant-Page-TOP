@@ -3,6 +3,8 @@
     --text-color: #2F6767;
     --hover-text-color: #333333;
     --hero-background: #d8f9f5;
+    --highlight-color: #FF6B6B;
+    --hero-text-color: #3C5858;
 }
 
 * {
@@ -13,6 +15,12 @@
 body, html {
     height: 100vh;
     background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+}
+
+#content {
+    flex: 1;
 }
 
 body {
@@ -71,12 +79,47 @@ nav {
 }
 
 .hero-card {
-    position: relative;
-    margin: 20vh auto;
-    max-width: 60vw;
-    height: 50vh;
-    background: var(--hero-background);
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    border-radius: 8px;
-    padding: 20px;
+    margin: 75px 0 10px 0;
+    display: flex;
+    align-items: center;
 }
+
+.hero-left {
+    width: 60vw;
+    margin-left: 20px;
+}
+
+.hero-title {
+    font-size: 60px;
+    line-height: 1.2;
+    color: var(--text-color);
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.hero-text {
+    margin-top: 10vh;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--hero-text-color);
+
+}
+
+.hero-right img {
+    max-height: 100%;
+    max-width: 40vw;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+footer {
+    padding: 20px 0;
+}
+
+.footer-text {
+    text-align: center;
+    font-weight: 600;
+}
+
+
