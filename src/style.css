@@ -12,16 +12,14 @@
     margin: 0px;
 }
 
-body, html {
+body {
     height: 100vh;
-    background: var(--background-color);
     display: flex;
     flex-direction: column;
 }
 
 #content {
     flex: 1;
-    margin-top: 20px;
 }
 
 header {
@@ -31,10 +29,11 @@ header {
     max-height: 100px;
 }
 
-#content,
+.hero-card,
 header {
     padding-left: 80px;
     padding-right: 80px;
+    background: var(--background-color);
 }
 .header-logo {
     max-height: 100%;
@@ -82,9 +81,10 @@ nav {
 }
 
 .hero-card {
-    margin: 50px 0 10px 0;
+    padding-top: 50px;
     display: flex;
     align-items: center;
+    height: 100%;
 }
 
 .hero-left {
