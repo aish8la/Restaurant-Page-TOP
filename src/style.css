@@ -108,7 +108,6 @@ nav {
     font-weight: 600;
     line-height: 1.5;
     color: var(--hero-text-color);
-
 }
 
 .hero-right img {
@@ -122,6 +121,37 @@ nav {
 .menu {
     background-color: var(--hero-background);
     height: 100%;
+    padding-top: 20px;
+}
+
+.menu-cat {
+    margin: 10px 0px 10px 0px;
+}
+
+.cat-title-div {
+    display: flex;
+    align-items: center;
+    margin: 30px 0 20px 0;
+}
+
+.cat-title-div h2 {
+    margin: 0;
+    padding:0 15px;
+    white-space: nowrap;
+}
+
+.cat-title-div::after {
+    content: '';
+    flex-grow: 1;
+    height: 3px;
+    background-color: var(--hover-text-color);
+}
+
+.cat-title-div::before {
+    content: '';
+    flex-grow: 1;
+    height: 3px;
+    background-color: var(--hover-text-color);
 }
 
 footer {
