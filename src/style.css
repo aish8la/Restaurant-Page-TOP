@@ -165,7 +165,22 @@ nav {
     background-color: var(--hover-text-color);
 }
 
+.cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,300px));
+    grid-auto-rows: 350px;
+    gap: 20px;
+    align-items: end;
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+}
 
+.menu-item {
+    background-color: var(--background-color);
+    width: 100%;/*dummy sizes*/
+    height: 60%;/*dummy*/
+}
 
 /* footer styles */
 
@@ -174,7 +189,6 @@ footer {
     background-color: var(--text-color);
     text-align: center;
     color: #fff;
-
 }
 
 .footer-text {
