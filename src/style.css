@@ -120,7 +120,8 @@ nav {
 }
 
 .menu {
-    
+    background-color: var(--hero-background);
+    height: 100%;
 }
 
 footer {
