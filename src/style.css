@@ -12,6 +12,14 @@
     margin: 0px;
 }
 
+.hero-card,
+.menu,
+header {
+    padding-left: 80px;
+    padding-right: 80px;
+
+}
+
 body {
     height: 100vh;
     display: flex;
@@ -22,21 +30,18 @@ body {
     flex: 1;
 }
 
+
+/* header & nav bar styles */
+
 header {
     display: flex;
     justify-content: space-between;
-    padding: 15px 0px 8px 0px;
+    padding-top: 15px;
+    padding-bottom: 8px;
     max-height: 100px;
     background: var(--background-color);
 }
 
-.hero-card,
-.menu,
-header {
-    padding-left: 80px;
-    padding-right: 80px;
-
-}
 .header-logo {
     max-height: 100%;
     max-width: 150px;
@@ -82,6 +87,9 @@ nav {
     cursor: pointer;
 }
 
+
+/*homepage styles*/
+
 .hero-card {
     padding-top: 50px;
     display: flex;
@@ -118,6 +126,9 @@ nav {
     object-fit: contain;
 }
 
+
+/* menu page styles*/
+
 .menu {
     background-color: var(--hero-background);
     height: 100%;
@@ -153,6 +164,10 @@ nav {
     height: 3px;
     background-color: var(--hover-text-color);
 }
+
+
+
+/* footer styles */
 
 footer {
     padding: 20px 0;
