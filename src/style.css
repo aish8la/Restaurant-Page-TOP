@@ -133,6 +133,7 @@ nav {
     background-color: var(--hero-background);
     height: 100%;
     padding-top: 20px;
+    padding-bottom: 30px;
 }
 
 .menu-cat {
@@ -176,10 +177,68 @@ nav {
     align-content: center;
 }
 
+
+
 .menu-item {
     background-color: var(--background-color);
-    width: 100%;/*dummy sizes*/
-    height: 60%;/*dummy*/
+    border-radius: 10px;
+    width: 100%;
+    height: 75%;
+    padding: 110px 15px 15px 15px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item-img {
+    border-radius: 50%;
+    background-color: var(--background-color);
+    border: 10px double var(--hero-background);
+    width: 60%;
+    aspect-ratio: 1 / 1;
+    top: -30%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    z-index: 10;
+}
+
+.menu-item-buy-btn {
+    background-color: var(--text-color); 
+    border: none;
+    border-radius: 8px; 
+    padding: 12px 20px; 
+    color: #fff; 
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: box-shadow 0.2s ease-in-out;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.menu-item-buy-btn:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+    background-color: var(--highlight-color); 
+}
+
+.menu-item-amnt {
+    position: absolute;
+    bottom: 15px;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.menu-item p {
+    margin: 5px 0;
 }
 
 /* footer styles */
