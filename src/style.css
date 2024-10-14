@@ -269,6 +269,16 @@ nav {
     position: relative;
 }
 
+.about-card-img {
+    width: 25vw;
+    position: absolute;
+    right: -7vw;
+    top: 20vh;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+    border: 20px double var(--hero-text-color);
+    border-radius: 10%;
+}
+
 .about-div h1, .about-div h3 {
     margin: 15px 0;
 }
