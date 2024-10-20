@@ -13,6 +13,8 @@ class displayController {
         });
 
         DOMElement.textContent = textString;
+
+        return DOMElement;
     }
 };
 
@@ -34,7 +36,7 @@ class homeRender extends displayController {
     
 // render homepage
     renderHome() {
-        this.elementGenerator('div',{class: "hero-card"}, this.contentBox, "");
+        this.elementGenerator('div',{class: "hero-card"}, "");
 
     }
 };
