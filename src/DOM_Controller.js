@@ -1,6 +1,6 @@
 import heroImg from "./asset/resource/pizza.png";
 
-class displayController {
+class DisplayController {
   //Element generator
 
   elementGenerator(type, attributes = {}, textString) {
@@ -16,10 +16,10 @@ class displayController {
   }
 }
 
-displayController.prototype.contentBox = document.querySelector("#content");
+DisplayController.prototype.contentBox = document.querySelector("#content");
 
 // home display class
-export class homeRender extends displayController {
+export class HomepageClass extends DisplayController {
   #heroText = {
     heroTitle: "Big Flavor in Every Bite",
     heroMainTxt:
