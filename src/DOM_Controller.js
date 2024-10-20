@@ -1,42 +1,52 @@
-const { prototype } = require("html-webpack-plugin");
+import heroImg from "./asset/resource/pizza.png";
 
 class displayController {
+  //Element generator
 
-    //Element generator
+  elementGenerator(type, attributes = {}, textString) {
+    const DOMElement = document.createElement(type);
 
-    elementGenerator(type, attributes = {}, textString) {
+    Object.keys(attributes).forEach((key) => {
+      DOMElement.setAttribute(key, attributes[key]);
+    });
 
-        const DOMElement = document.createElement(type);
+    DOMElement.textContent = textString;
 
-        Object.keys(attributes).forEach(key => {
-            DOMElement.setAttribute(key, attributes[key]);
-        });
+    return DOMElement;
+  }
+}
 
-        DOMElement.textContent = textString;
-
-        return DOMElement;
-    }
-};
-
-displayController.prototype.contentBox = document.querySelector('#content');
-
-
-/* <div class="hero-card">
-<div class="hero-left">
-    <h1 class="hero-title">Big Flavor in Every Bite</h1>
-    <p class="hero-text">Discover a delightful variety of freshly crafted small plates, perfect for sharing or savoring on your own. At Small Bites, we turn simple ingredients into unforgettable tastes.</p>
-</div>
-<div class="hero-right">
-    <img src="./asset/resource/pizza.png" alt="">
-</div>
-</div> */
+displayController.prototype.contentBox = document.querySelector("#content");
 
 // home display class
-class homeRender extends displayController {
-    
-// render homepage
-    renderHome() {
-        this.elementGenerator('div',{class: "hero-card"}, "");
+export class homeRender extends displayController {
+  // render homepage
+  renderHome() {
+    const heroCard = this.elementGenerator("div", { class: "hero-card" }, "");
+    const heroLeft = this.elementGenerator("div", { class: "hero-left" }, "");
+    const heroRight = this.elementGenerator("div", { class: "hero-right" }, "");
+    const heroLeftFirst = this.elementGenerator(
+      "h1",
+      { class: "hero-title" },
+      "Big Flavor in Every Bite"
+    );
+    const heroLeftSecond = this.elementGenerator(
+      "p",
+      { class: "hero-text" },
+      "Discover a delightful variety of freshly crafted small plates, perfect for sharing or savoring on your own. At Small Bites, we turn simple ingredients into unforgettable tastes."
+    );
+    const heroRightFirst = this.elementGenerator("img", {}, "");
+    heroRightFirst.src = heroImg;
 
-    }
-};
+    //append elements
+
+    this.contentBox.appendChild(heroCard);
+
+    heroCard.appendChild(heroLeft);
+    heroLeft.appendChild(heroLeftFirst);
+    heroLeft.appendChild(heroLeftSecond);
+
+    heroCard.appendChild(heroRight);
+    heroRight.appendChild(heroRightFirst);
+  }
+}
