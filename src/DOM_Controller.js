@@ -20,6 +20,11 @@ displayController.prototype.contentBox = document.querySelector("#content");
 
 // home display class
 export class homeRender extends displayController {
+  #heroText = {
+    heroTitle: "Big Flavor in Every Bite",
+    heroMainTxt:
+      "Discover a delightful variety of freshly crafted small plates, perfect for sharing or savoring on your own. At Small Bites, we turn simple ingredients into unforgettable tastes.",
+  };
   // render homepage
   renderHome() {
     const heroCard = this.elementGenerator("div", { class: "hero-card" }, "");
@@ -28,12 +33,12 @@ export class homeRender extends displayController {
     const heroLeftFirst = this.elementGenerator(
       "h1",
       { class: "hero-title" },
-      "Big Flavor in Every Bite"
+      this.#heroText.heroTitle
     );
     const heroLeftSecond = this.elementGenerator(
       "p",
       { class: "hero-text" },
-      "Discover a delightful variety of freshly crafted small plates, perfect for sharing or savoring on your own. At Small Bites, we turn simple ingredients into unforgettable tastes."
+      this.#heroText.heroMainTxt
     );
     const heroRightFirst = this.elementGenerator("img", {}, "");
     heroRightFirst.src = heroImg;
