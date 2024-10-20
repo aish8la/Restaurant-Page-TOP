@@ -1,6 +1,6 @@
 import "./style.css";
-import { homeRender } from "./DOM_Controller";
+import { HomepageClass } from "./DOM_Controller";
 
-const homeWorld = new homeRender();
+const homeWorld = new HomepageClass();
 
 homeWorld.renderHome();
