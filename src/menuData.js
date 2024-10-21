@@ -1,4 +1,4 @@
-class MenuData {
+export class MenuData {
   //array containing dish categories
   #dishCat = ["Appetizers", "Salads", "Main Dishes", "Desserts"];
 
@@ -68,6 +68,14 @@ class MenuData {
       amount: "$7.50",
     },
   ];
+
+  get dishCat() {
+    return this.#dishCat;
+  }
+
+  get dishData() {
+    return this.#dishData;
+  }
 }
 
 class dishObj {
