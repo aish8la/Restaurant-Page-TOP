@@ -1,6 +1,16 @@
 import "./style.css";
 import { HomepageClass } from "./displayController";
+import { MenuPageClass } from "./displayController";
+import { UIController } from "./UIController";
 
-const homeWorld = new HomepageClass();
+const homePageObj = new HomepageClass();
+const menuPageObj = new MenuPageClass();
+const UIControllerObj = new UIController();
 
-homeWorld.renderHome();
+function init() {
+    homePageObj.renderHome();
+    UIControllerObj.navBarClick(homePageObj.renderHome, menuPageObj.renderMenuPage);
+};
+
+init();
+
