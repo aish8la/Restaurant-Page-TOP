@@ -93,6 +93,34 @@ export class MenuPageClass extends DisplayController {
       catCtn.appendChild(catTitleCtn);
       catTitleCtn.appendChild(catTitle);   
     }
+
+    //render menu items
+
+    for (const dish of dishArr) {
+
+      //generate the elements
+      const menuItemCtn = this.elementGenerator("div", { class: "menu-item", id:dish.id, 'data-cat-id': dish.dishCategoryId, 'data-menu-item-id': dish.id }, '');
+      const menuItemImgCtn = this.elementGenerator("div", { class: "menu-item-img", 'data-menu-item-id': dish.id }, '');
+      const menuItemImg = this.elementGenerator("img", { 'data-menu-item-id': dish.id, src: dish.imgLink }, '');
+      const menuItemTitle = this.elementGenerator("h3", { class: "menu-item-title", 'data-menu-item-id': dish.id }, dish.name);
+      const menuItemDesc = this.elementGenerator("p", { class: "menu-item-descp", 'data-menu-item-id': dish.id }, dish.discription);
+      const menuItemAmt = this.elementGenerator("h3", { class: "menu-item-amnt", 'data-menu-item-id': dish.id }, dish.amount);
+      const menuItemBtn = this.elementGenerator("button", { class: "menu-item-buy-btn", 'data-menu-item-id': dish.id }, 'Buy Now');
+
+      //select the category element
+      const categoryGrid = document.querySelector(`.cat-grid[data-cat-id="${dish.dishCategoryId}"]`);
+
+      //render to page
+      menuItemCtn.appendChild(menuItemImgCtn);
+      menuItemImgCtn.appendChild(menuItemImg);
+      menuItemCtn.appendChild(menuItemTitle);
+      menuItemCtn.appendChild(menuItemDesc);
+      menuItemCtn.appendChild(menuItemAmt);
+      menuItemCtn.appendChild(menuItemBtn);
+      categoryGrid.appendChild(menuItemCtn);
+    }
+
+
   }
 
 }
