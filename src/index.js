@@ -1,5 +1,5 @@
 import "./style.css";
-import { HomepageClass } from "./DOM_Controller";
+import { HomepageClass } from "./displayController";
 
 const homeWorld = new HomepageClass();
 
