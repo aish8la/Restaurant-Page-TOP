@@ -61,3 +61,13 @@ export class HomepageClass extends DisplayController {
     heroRight.appendChild(heroRightFirst);
   }
 }
+
+export class MenuPageClass extends DisplayController {
+  renderMenuPage() {
+    this.clearContentBox();
+
+    const menuContent = this.elementGenerator("div", { class: "menu" }, "");
+    const menuTitle = this.elementGenerator("h1", { class: "menu-title" }, "Menu");
+  }
+
+}
