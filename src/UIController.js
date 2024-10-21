@@ -1,13 +1,14 @@
 export class UIController {
     constructor() {
-        const navBar = document.querySelector('header > nav');
+        this.navBar = document.querySelector('header > nav');
     }
 
-    navBarClick(home, menu, about) {
-        this.navBar.addEventListner('click', e => {
-            const btnId = e.target.id;
-            
+    navBarClick = (home, menu, about) => {
+
+
+        this.navBar.addEventListener('click', e => {
             if(e.target.id === 'home-btn') {
+
                 home();
             };
 
