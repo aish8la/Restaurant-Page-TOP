@@ -62,12 +62,37 @@ export class HomepageClass extends DisplayController {
 }
 
 export class MenuPageClass extends DisplayController {
-  renderMenuPage = () => {
+  renderMenuPage = (catArr, dishArr) => {
 
     this.clearContentBox();
 
     const menuContent = this.elementGenerator("div", { class: "menu" }, "");
     const menuTitle = this.elementGenerator("h1", { class: "menu-title" }, "Menu");
+
+    this.contentBox.appendChild(menuContent);
+    menuContent.appendChild(menuTitle)
+
+    this.renderMenuContent(catArr, dishArr, menuContent);
+  }
+
+  renderMenuContent = (categoryArr, dishArr, menuElement) => {
+
+    if(!categoryArr || !dishArr) {
+      return;
+    }
+    //render category section
+
+    for (const category of categoryArr) {
+      const catCtn = this.elementGenerator("div", { class: "menu-cat", 'data-cat-id': category.id }, "");
+      const catTitleCtn = this.elementGenerator("div", { class: "cat-title-div", 'data-cat-id': category.id }, "");
+      const catTitle = this.elementGenerator("h1", { class: "cat-title-div", 'data-cat-id': category.id }, category.category);
+      const catGrid = this.elementGenerator("div", { class: "cat-grid", 'data-cat-id': category.id }, "");
+      
+      menuElement.appendChild(catCtn);
+      menuElement.appendChild(catGrid);
+      catCtn.appendChild(catTitleCtn);
+      catTitleCtn.appendChild(catTitle);   
+    }
   }
 
 }
