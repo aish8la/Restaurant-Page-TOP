@@ -15,7 +15,7 @@ class DisplayController {
     return DOMElement;
   }
 
-  clearContentBox() {
+  clearContentBox = () => {
     this.contentBox.replaceChildren();
   }
 }
@@ -30,8 +30,7 @@ export class HomepageClass extends DisplayController {
       "Discover a delightful variety of freshly crafted small plates, perfect for sharing or savoring on your own. At Small Bites, we turn simple ingredients into unforgettable tastes.",
   };
   // render homepage
-  renderHome() {
-
+  renderHome = () => {
     this.clearContentBox();
     const heroCard = this.elementGenerator("div", { class: "hero-card" }, "");
     const heroLeft = this.elementGenerator("div", { class: "hero-left" }, "");
@@ -63,7 +62,8 @@ export class HomepageClass extends DisplayController {
 }
 
 export class MenuPageClass extends DisplayController {
-  renderMenuPage() {
+  renderMenuPage = () => {
+
     this.clearContentBox();
 
     const menuContent = this.elementGenerator("div", { class: "menu" }, "");
