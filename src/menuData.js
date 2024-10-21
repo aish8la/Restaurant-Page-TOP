@@ -79,16 +79,16 @@ export class MenuData {
 
   #lastId = 0;
 
-  get idGen() {
+  idGen = () => {
     this.#lastId++;
     return `mnu-id-${this.#lastId}`;
   }
 
-  get dishCat() {
+  dishCat = () => {
     return this.#dishCat;
   }
 
-  get dishData() {
+  dishData = () => {
     return this.#dishData;
   }
 }
