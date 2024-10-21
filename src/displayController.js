@@ -14,6 +14,10 @@ class DisplayController {
 
     return DOMElement;
   }
+
+  clearContentBox() {
+    this.contentBox.replaceChildren();
+  }
 }
 
 DisplayController.prototype.contentBox = document.querySelector("#content");
@@ -27,6 +31,8 @@ export class HomepageClass extends DisplayController {
   };
   // render homepage
   renderHome() {
+
+    this.clearContentBox();
     const heroCard = this.elementGenerator("div", { class: "hero-card" }, "");
     const heroLeft = this.elementGenerator("div", { class: "hero-left" }, "");
     const heroRight = this.elementGenerator("div", { class: "hero-right" }, "");
