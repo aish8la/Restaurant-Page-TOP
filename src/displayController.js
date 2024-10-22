@@ -85,7 +85,7 @@ export class MenuPageClass extends DisplayController {
     for (const category of categoryArr) {
       const catCtn = this.elementGenerator("div", { class: "menu-cat", 'data-cat-id': category.id }, "");
       const catTitleCtn = this.elementGenerator("div", { class: "cat-title-div", 'data-cat-id': category.id }, "");
-      const catTitle = this.elementGenerator("h1", { class: "cat-title-div", 'data-cat-id': category.id }, category.category);
+      const catTitle = this.elementGenerator("h1", { 'data-cat-id': category.id }, category.category);
       const catGrid = this.elementGenerator("div", { class: "cat-grid", 'data-cat-id': category.id }, "");
       
       menuElement.appendChild(catCtn);
