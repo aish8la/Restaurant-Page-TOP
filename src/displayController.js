@@ -17,7 +17,7 @@ class DisplayController {
 
   clearContentBox = () => {
     this.contentBox.replaceChildren();
-  }
+  };
 }
 
 DisplayController.prototype.contentBox = document.querySelector("#content");
@@ -58,57 +58,109 @@ export class HomepageClass extends DisplayController {
 
     heroCard.appendChild(heroRight);
     heroRight.appendChild(heroRightFirst);
-  }
+  };
 }
 
 export class MenuPageClass extends DisplayController {
   renderMenuPage = (catArr, dishArr) => {
-
     this.clearContentBox();
 
     const menuContent = this.elementGenerator("div", { class: "menu" }, "");
-    const menuTitle = this.elementGenerator("h1", { class: "menu-title" }, "Menu");
+    const menuTitle = this.elementGenerator(
+      "h1",
+      { class: "menu-title" },
+      "Menu"
+    );
 
     this.contentBox.appendChild(menuContent);
-    menuContent.appendChild(menuTitle)
+    menuContent.appendChild(menuTitle);
 
     this.renderMenuContent(catArr, dishArr, menuContent);
-  }
+  };
 
   renderMenuContent = (categoryArr, dishArr, menuElement) => {
-
-    if(!categoryArr || !dishArr) {
+    if (!categoryArr || !dishArr) {
       return;
     }
     //render category section
 
     for (const category of categoryArr) {
-      const catCtn = this.elementGenerator("div", { class: "menu-cat", 'data-cat-id': category.id }, "");
-      const catTitleCtn = this.elementGenerator("div", { class: "cat-title-div", 'data-cat-id': category.id }, "");
-      const catTitle = this.elementGenerator("h1", { 'data-cat-id': category.id }, category.category);
-      const catGrid = this.elementGenerator("div", { class: "cat-grid", 'data-cat-id': category.id }, "");
-      
+      const catCtn = this.elementGenerator(
+        "div",
+        { class: "menu-cat", "data-cat-id": category.id },
+        ""
+      );
+      const catTitleCtn = this.elementGenerator(
+        "div",
+        { class: "cat-title-div", "data-cat-id": category.id },
+        ""
+      );
+      const catTitle = this.elementGenerator(
+        "h1",
+        { "data-cat-id": category.id },
+        category.category
+      );
+      const catGrid = this.elementGenerator(
+        "div",
+        { class: "cat-grid", "data-cat-id": category.id },
+        ""
+      );
+
       menuElement.appendChild(catCtn);
       menuElement.appendChild(catGrid);
       catCtn.appendChild(catTitleCtn);
-      catTitleCtn.appendChild(catTitle);   
+      catTitleCtn.appendChild(catTitle);
     }
 
     //render menu items
 
     for (const dish of dishArr) {
-
       //generate the elements
-      const menuItemCtn = this.elementGenerator("div", { class: "menu-item", id:dish.id, 'data-cat-id': dish.dishCategoryId, 'data-menu-item-id': dish.id }, '');
-      const menuItemImgCtn = this.elementGenerator("div", { class: "menu-item-img", 'data-menu-item-id': dish.id }, '');
-      const menuItemImg = this.elementGenerator("img", { 'data-menu-item-id': dish.id, src: dish.imgLink }, '');
-      const menuItemTitle = this.elementGenerator("h3", { class: "menu-item-title", 'data-menu-item-id': dish.id }, dish.dishName);
-      const menuItemDesc = this.elementGenerator("p", { class: "menu-item-descp", 'data-menu-item-id': dish.id }, dish.description);
-      const menuItemAmt = this.elementGenerator("h3", { class: "menu-item-amnt", 'data-menu-item-id': dish.id }, dish.amount);
-      const menuItemBtn = this.elementGenerator("button", { class: "menu-item-buy-btn", 'data-menu-item-id': dish.id }, 'Buy Now');
+      const menuItemCtn = this.elementGenerator(
+        "div",
+        {
+          class: "menu-item",
+          id: dish.id,
+          "data-cat-id": dish.dishCategoryId,
+          "data-menu-item-id": dish.id,
+        },
+        ""
+      );
+      const menuItemImgCtn = this.elementGenerator(
+        "div",
+        { class: "menu-item-img", "data-menu-item-id": dish.id },
+        ""
+      );
+      const menuItemImg = this.elementGenerator(
+        "img",
+        { "data-menu-item-id": dish.id, src: dish.imgLink },
+        ""
+      );
+      const menuItemTitle = this.elementGenerator(
+        "h3",
+        { class: "menu-item-title", "data-menu-item-id": dish.id },
+        dish.dishName
+      );
+      const menuItemDesc = this.elementGenerator(
+        "p",
+        { class: "menu-item-descp", "data-menu-item-id": dish.id },
+        dish.description
+      );
+      const menuItemAmt = this.elementGenerator(
+        "h3",
+        { class: "menu-item-amnt", "data-menu-item-id": dish.id },
+        dish.amount
+      );
+      const menuItemBtn = this.elementGenerator(
+        "button",
+        { class: "menu-item-buy-btn", "data-menu-item-id": dish.id },
+        "Buy Now"
+      );
 
       //select the category element
-      const categoryGrid = document.querySelector(`.cat-grid[data-cat-id="${dish.dishCategoryId}"]`);
+      const categoryGrid = document.querySelector(
+        `.cat-grid[data-cat-id="${dish.dishCategoryId}"]`
+      );
 
       //render to page
       menuItemCtn.appendChild(menuItemImgCtn);
@@ -119,6 +171,29 @@ export class MenuPageClass extends DisplayController {
       menuItemCtn.appendChild(menuItemBtn);
       categoryGrid.appendChild(menuItemCtn);
     }
+  };
+}
+
+export class AboutPageClass {
+
+  #aboutText = {
+    aboutTitle: 'About Small Bites',
+    aboutText: `Welcome to Small Bites! We’re a cozy and casual restaurant offering a delicious range of small plates that are perfect for sharing.
+      Our menu is inspired by global flavors and made with fresh, locally sourced ingredients, giving you a variety of choices that are always bold, creative, and full of flavor.
+      <br><br>
+      At Small Bites, we believe in making food an enjoyable experience. Whether you’re grabbing a quick bite or spending time with friends,
+      our dishes are designed to be savored in a relaxed, friendly atmosphere.`,
+    contactUsDescp: 'We’d love to hear from you! For any inquiries or reservations, feel free to get in touch:',
+    contactNo:'+960 9647198',
+    emailAdd: 'aish8la@hotmail.com',
+    locationAdd: "Beach Hous, Male'",
+    openHrOne: 'Sunday-Thursday: 11AM - 10PM',
+    openHrTwo: 'riday-Saturday: 9AM - 11PM'
+
   }
 
+  renderAboutPage = () => {
+    this.clearContentBox();
+  };
 }
+
