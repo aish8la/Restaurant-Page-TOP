@@ -269,6 +269,10 @@ nav {
     position: relative;
 }
 
+.about-us-sec > p {
+    white-space: pre-line;
+}
+
 .about-card-img {
     width: 25vw;
     position: absolute;
