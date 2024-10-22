@@ -1,4 +1,8 @@
 import heroImg from "./asset/resource/pizza.png";
+import aboutImg from "./asset/resource/logo-color.svg";
+import contactLogoFile from "./asset/resource/phone-icn.svg";
+import emailLogoFile from "./asset/resource/email-svgrepo-com.svg";
+import addressLogoFile from "./asset/resource/address-location-map-svgrepo-com.svg";
 
 class DisplayController {
   //Element generator
@@ -174,26 +178,179 @@ export class MenuPageClass extends DisplayController {
   };
 }
 
-export class AboutPageClass {
+export class AboutPageClass extends DisplayController {
 
   #aboutText = {
     aboutTitle: 'About Small Bites',
     aboutText: `Welcome to Small Bites! We’re a cozy and casual restaurant offering a delicious range of small plates that are perfect for sharing.
-      Our menu is inspired by global flavors and made with fresh, locally sourced ingredients, giving you a variety of choices that are always bold, creative, and full of flavor.
-      <br><br>
+      Our menu is inspired by global flavors and made with fresh, locally sourced ingredients, giving you a variety of choices that are always bold, creative, and full of flavor.\n
       At Small Bites, we believe in making food an enjoyable experience. Whether you’re grabbing a quick bite or spending time with friends,
       our dishes are designed to be savored in a relaxed, friendly atmosphere.`,
+    aboutImg: aboutImg,
     contactUsDescp: 'We’d love to hear from you! For any inquiries or reservations, feel free to get in touch:',
     contactNo:'+960 9647198',
     emailAdd: 'aish8la@hotmail.com',
     locationAdd: "Beach Hous, Male'",
     openHrOne: 'Sunday-Thursday: 11AM - 10PM',
     openHrTwo: 'riday-Saturday: 9AM - 11PM'
-
   }
 
   renderAboutPage = () => {
     this.clearContentBox();
+
+    //about us section
+    const aboutCtn = this.elementGenerator(
+      "div",
+      { class: "about-div",},
+      ""
+    );
+    const aboutUsSec = this.elementGenerator(
+      "div",
+      { class: "about-us-sec",},
+      ""
+    );
+    const aboutTitleEle = this.elementGenerator(
+      "h1",
+      {},
+      this.#aboutText.aboutTitle
+    );
+    const aboutTextEle = this.elementGenerator(
+      "p",
+      {},
+      this.#aboutText.aboutText
+    );
+    const aboutImg = this.elementGenerator(
+      "img",
+      {src: this.#aboutText.aboutImg, class: 'about-card-img'},
+      ''
+    );
+
+    //contact us section
+    const contactSec = this.elementGenerator(
+      "div",
+      {class: 'contact-sec'},
+      ''
+    );
+    const contactTitle = this.elementGenerator(
+      "h3",
+      {},
+      'Contact Us'
+    );
+    const contactText = this.elementGenerator(
+      "p",
+      {},
+      this.#aboutText.contactUsDescp
+    );
+    const contactUl = this.elementGenerator(
+      "ul",
+      {},
+      ''
+    );
+    const contactNoCtn = this.elementGenerator(
+      "li",
+      {},
+      ''
+    );
+    const contactNoLogo = this.elementGenerator(
+      "img",
+      {src: contactLogoFile},
+      ''
+    );
+    const contactNoText = this.elementGenerator(
+      "p",
+      {},
+      this.#aboutText.contactNo
+    );
+    const emailAddCtn= this.elementGenerator(
+      "li",
+      {},
+      ''
+    );
+    const emailLogo = this.elementGenerator(
+      "img",
+      {src: emailLogoFile},
+      ''
+    );
+    const emailText = this.elementGenerator(
+      "p",
+      {},
+      this.#aboutText.emailAdd
+    );
+    const locationAddCtn = this.elementGenerator(
+      "li",
+      {},
+      ''
+    );
+    const locationLogo = this.elementGenerator(
+      "img",
+      {src: addressLogoFile},
+      ''
+    );
+    const locationText = this.elementGenerator(
+      "p",
+      {},
+      this.#aboutText.locationAdd
+    );
+
+    //open hour section
+    const openHrSec = this.elementGenerator(
+      "div",
+      {class: 'hours-sec'},
+      ''
+    );
+    const openHrTitle = this.elementGenerator(
+      "h3",
+      {},
+      this.#aboutText.openHrTitle
+    );
+    const openHrUl = this.elementGenerator(
+      "ul",
+      {},
+      ''
+    );
+    const openHrLiOne = this.elementGenerator(
+      "li",
+      {},
+      this.#aboutText.openHrOne
+    );
+    const openHrLiTwo = this.elementGenerator(
+      "li",
+      {},
+      this.#aboutText.openHrTwo
+    );
+
+
+    // render on display
+
+    this.contentBox.appendChild(aboutCtn);
+
+    aboutCtn.appendChild(aboutUsSec);
+    aboutUsSec.appendChild(aboutTitleEle);
+    aboutUsSec.appendChild(aboutTextEle);
+    aboutUsSec.appendChild(aboutImg);
+
+    aboutCtn.appendChild(contactSec);
+    contactSec.appendChild(contactTitle);
+    contactSec.appendChild(contactText);
+    contactSec.appendChild(contactUl);
+
+    contactUl.appendChild(contactNoCtn);
+    contactNoCtn.appendChild(contactNoLogo);
+    contactNoCtn.appendChild(contactNoText);
+
+    contactUl.appendChild(emailAddCtn);
+    emailAddCtn.appendChild(emailLogo);
+    emailAddCtn.appendChild(emailText);
+
+    contactUl.appendChild(locationAddCtn);
+    locationAddCtn.appendChild(locationLogo);
+    locationAddCtn.appendChild(locationText);
+
+    aboutCtn.appendChild(openHrSec);
+
+    openHrSec.appendChild(openHrUl);
+    openHrUl.appendChild(openHrLiOne);
+    openHrUl.appendChild(openHrLiTwo);
   };
 }
 

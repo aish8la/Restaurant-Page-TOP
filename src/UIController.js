@@ -4,7 +4,7 @@ export class UIController {
     }
 
     navBarClick = (home, menu, about) => {
-
+        
 
         this.navBar.addEventListener('click', e => {
             if(e.target.id === 'home-btn') {
