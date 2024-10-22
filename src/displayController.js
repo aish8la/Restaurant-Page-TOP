@@ -192,7 +192,7 @@ export class AboutPageClass extends DisplayController {
     emailAdd: 'aish8la@hotmail.com',
     locationAdd: "Beach Hous, Male'",
     openHrOne: 'Sunday-Thursday: 11AM - 10PM',
-    openHrTwo: 'riday-Saturday: 9AM - 11PM'
+    openHrTwo: 'Friday-Saturday: 9AM - 11PM'
   }
 
   renderAboutPage = () => {
